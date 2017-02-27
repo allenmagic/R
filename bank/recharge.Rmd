@@ -6,11 +6,15 @@ output: html_document
 ---
 
 
-## R Markdown
+## 计算交易的分布和柱状图
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+统计过去一年的充值交易，按照<=100万，100万~200万，200万~500万，500万~1000万，1000万以上交易的笔数，并画柱状图。
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+同时，由于招行采用了直连的方式，可以将其充值剔除，统计其余银行的充值笔数的情况。
+
+用knitr包中的printr函数打印data.frame为表格。
+
+具体的代码如下：
 
 ```{r cars}
 # load raw data and create a data.frame object
