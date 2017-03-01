@@ -17,6 +17,8 @@ p <- ggplot(d,aes(x=product,y=t_con,fill=product))
 p <- p + geom_bar(stat = "identity",width = 0.6)
 p <- p + scale_x_discrete(limits=lv)  #改变柱状图排序按照lv水平排序
 p <- p + labs(title="不同产品发生的交易量（过去一年）",x=NULL,y="交易额",fill="企业版产品")
+p <- p + theme(axis.title.y = element_text(angle = 0))
+p <- p + theme(plot.title = element_text(hjust = 0.6,colour = "bue"))  # 改变标题的位置和颜色
 p <- p + theme(text = element_text(family = "WenQuanYiMicroHei"))
 p
 
