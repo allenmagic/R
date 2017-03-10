@@ -1,10 +1,14 @@
 # 设置工作目录
 setwd("~/Documents/R/exchange/")
+library(plyr)
 
 # 从exchange.csv读取原始数据
 rm(list = ls())   # 预清楚所有对象
 ex <- read.csv("exchange.csv",header = T)
 colnames(ex) <- c("type","amount","date","product")  # 重新命名数据的列名称
+ex <- data.frame(ex,month=as.numeric(as.character(substr(ex$date,1,6))))
+ext <- ddply(ex,c("product"),summarise,ex_no = length(product),ex_a = sum(amount))
+
 
 # 从register.csv读取用户注册的日期数据
 r <- read.csv("register.csv",header = T)     # 读存数据
