@@ -12,7 +12,7 @@
 This is repo of my R scripts in my daily work. It used to gather data from database and excel file.
 
 Also I create some scripts to test the data between excel files and system which uploaded by devlopers from excel files. 
-This is a useful test method the check the data accuracy.
+This is a useful test method to check the data accuracy.
 
 And some test cases to check the program logical. I create the sql to fetch the data from database and then use caculation
 to caculate the result, to compare with system display. 
