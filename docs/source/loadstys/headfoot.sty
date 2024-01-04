@@ -1,0 +1,13 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  该文件为全局的页眉页脚的设置文件，默认情况下页面均使用该设置除非单独有重新描述文件             %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\headrulewidth}{0pt}    			%%%页眉线设置为0pt即不显示
+\fancyhead{}                                
+\pagestyle{fancy}
+\fancyhead[LE,RO]{\small\color{textfoot}{{Confidential}}}         %%%偶数页左侧，奇数页右侧页眉显示“Confidential”
+\fancyfoot[LE,RO]{\small\color{textfoot}{\thepage}}               %%%偶数页左侧，奇数页右侧页脚显示页数
+\fancyfoot[CE,CO]{}                                               %%%偶数页和奇数页页脚中间部分显示空
+
+%%%%%重新设置footnote按照编号处理
+\renewcommand{\thempfootnote}{\arabic{mpfootnote}}

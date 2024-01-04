@@ -1,0 +1,21 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  该文件为color颜色的定义样式的文件，可以在文档中被调用以及部分被重新命令化。                    %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{cpe}{RGB}{117,120,123} 
+\color{cpe} 
+\definecolor{cpeblue}{RGB}{94,138,180}
+\definecolor{bgcolor}{RGB}{218,232,243}
+\definecolor{linecolor}{RGB}{164,200,225}
+\definecolor{cpered}{RGB}{174,17,41}
+\definecolor{textbg}{RGB}{219,233,243}
+\definecolor{textwh}{RGB}{255,255,255}
+\definecolor{textfoot}{RGB}{197,197,197}
+\definecolor{statementpagecolor}{RGB}{208,208,208}
+\definecolor{contactbgcolor}{RGB}{104,104,104}
+\definecolor{projectbgcolor}{RGB}{210,227,241}
+
+
+%%%%%定义新的cpeblue命令改变颜色为cpeblue的颜色值{cpeblue}{RGB}{94,138,180}
+\newcommand{\cpeblue}[1]{\textcolor{cpeblue}{#1}}
+
+%\tcbset{graphical environment=tikzpicture,skin=enhanced}

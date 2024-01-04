@@ -1,0 +1,293 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{article}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+  \setmainfont[]{Microsoft YaHei}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%  加载所有所需要的包文件                            %%%%%
+%%%%%  所有加载的包配置文件均在~loadstys/文件夹下    %%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{loadstys/pagestyle}                %%%加载页面样式设置文件
+\usepackage{loadstys/packages}                 %%%加载需要的包列表
+\usepackage{loadstys/colorstyle}               %%%加载预定义颜色设置
+\usepackage{loadstys/fontconfig}               %%%加载字体设置文件
+\usepackage{loadstys/distance}                 %%%加载间距设置文件
+\usepackage{loadstys/headfoot}                 %%%加载页眉页脚设置文件
+\usepackage{loadstys/secformat}                %%%加载章节标题样式设置文件
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{目录}
+\else
+  \newcommand\contentsname{目录}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{插图目录}
+\else
+  \newcommand\listfigurename{插图目录}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{列表目录}
+\else
+  \newcommand\listtablename{列表目录}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{图}
+\else
+  \newcommand\figurename{图}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{表格}
+\else
+  \newcommand\tablename{表格}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{列表}
+\newcommand*\listoflistings{\listof{codelisting}{列表目录}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={VC/PE业务简介},
+  pdfauthor={zheng.youxin},
+  pdflang={zh-Hans},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{VC/PE业务简介}
+\author{zheng.youxin}
+\date{}
+
+\begin{document}
+\maketitle
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[frame hidden, enhanced, boxrule=0pt, breakable, sharp corners, borderline west={3pt}{0pt}{shadecolor}, interior hidden]}{\end{tcolorbox}}\fi
+
+\hypertarget{vcpeux4e1aux52a1ux7b80ux4ecb}{%
+\section{VC/PE业务简介}\label{vcpeux4e1aux52a1ux7b80ux4ecb}}
+
+\hypertarget{vcpeux4e1aux52a1ux57faux672cux4ecbux7ecd}{%
+\subsection{VC/PE业务基本介绍}\label{vcpeux4e1aux52a1ux57faux672cux4ecbux7ecd}}
+
+VC/PE主要是从事非上市公司的股权（或者股权相关权益）的直接投资活动，根据其投资公司的阶段、目的和方式的不同，可以分为：
+- 天使（种子）投资 - 风险（VC）投资 - PE（私募股权）投资 - 并购投资
+
+其本质均是股权相关的投资业务。其中天使（种子）投资是整个风险投资行业最前置的投资阶段和方式，国内有不少的投资机构专注此阶段的投资，例如真格基金。一般是在公司萌芽或者初创阶段发生的投资行为，可以视为项目启动之初的投资。风险（VC）投资一般起步于公司的A轮或者种子轮之后，基本上天使投资和风险投资的策略都是用很少或较少的资本投入来博取高额的投资回报收益，所以在风险投资领域会经常听到回报超过几十倍甚至几百倍的案例，极个别投资案例的回报甚至超过千倍，这是一个典型的以小博大的行业。
+
+私募股权投资一般发生在公司的发展过程中的中后期，一般是商业模式经过验证已经证明是可行成功的，为了扩大业务规模和市场地位需要通过私募股权融资方式获得大量的资金，并且用资金来扩大研发和生产，以达到企业规模成长的目的。私募股权投资相对于风险投资，投资额一般偏大，风险相对较低，回报倍数也较低，且私募股权投资的期限相对较短。一般风险投资的项目或者公司，可能需要很长时间才会实现投资退出，但私募股权的投资退出一般要求较短，目前看3-5年是个比较普遍的情况，而风险投资的退出期不定，最长可能超过10年的情况。
+
+并购投资是出于一定目的公司并购行为，一般分为吸收并购、合并、恶意收购、反向收购和管理层收购等类型。也有其它形式的分类，例如整体并购、项目并购、股权收购等。并购是收购方处于一定目的，例如扩大现有业务规模、上下游产业链整合、多元化经营等等对被并购方发起的资产收购。并购业务特点是规模较大、流程和时间长、业务复杂以及各种对应的法律协议等内容比较多，而且并购投资因为受到收购方和被收购方董事会（股东会），所在的国家地区以及政策法律的限制，存在失败的可能性。
+
+以上几种一级市场的投资业务来说，并购投资是最复杂的类型。
+
+\hypertarget{vcux98ceux9669ux6295ux8d44}{%
+\subsection{VC风险投资}\label{vcux98ceux9669ux6295ux8d44}}
+
+一般而言，VC风险投资机构主要是做财务性质的投资，以财务回报为目的。而另一个类型的CVC，除了财务性质投资的目的，可能还带有类似并购的一些目的，例如培育产业链、整合产业资源等。
+
+市场化的VC和PE机构整体上的公司的业务流程基本上就是\textbf{募（研）投管退}：
+- 募资 - 研究 - 投资 - 投资管理 - 退出
+
+基本上机构都是向投资人募集资金，并将所募资金成立投资基金并投资企业。其中投资基金一般是有限合伙制形式基金，所以投资人一般就是基金的有限合伙人(Limited
+Partners)，而机构则是充当基金的管理人也是一般合伙人的角色(General
+Partner)。其中有限合伙人承担基金绝大部分的出资金额，并享受基金的主要回报收益。而机构则出资很少的资金份额，机构主要是负责管理基金，包括寻找投资项目、管理投资项目、并完成项目退出，同时机构从基金中收取管理费和超额收益绩效（Carry)。
+
+\hypertarget{ux52dfux8d44}{%
+\subsubsection{募资}\label{ux52dfux8d44}}
+
+基金募资包括寻找和沟通意向的有限合伙人，完成基金募集。在该阶段的主要工作是：
+- 寻找潜在投资人 - 沟通基金情况，包括募集活动、介绍项目储备、基金路演等
+- 基金设立 - 首次关账以及后续关账 - 最终关账完成表示基金募集完成
+
+在募资过程中主要参与的人员或者团队包括：IR（投资者关系管理）、投资经理、财务、法务等。其中IR是主要角色，在机构中IR的核心工作就是维护投资人和完成基金募集。
+
+在募资管理过程一般用到的系统是包括\textbf{CRM、VDR}。其中CRM是客户关系管理系统，主要记录投资人信息，以及投资人维护的信息，部分机构的CRM系统亦会有基金募集过程中全部记录（包括沟通记录、路演材料、募资信息以及流程管理信息）。
+
+VDR又称虚拟文档室，主要供GP向LP提供具有保密性质的文档，文档包括基金募资过程中的基金材料、各种法律协议以及完成投资后各类文件例如出资证明书、缴款通知书、基金报告等。目前比较常用的供应商有intralinks和datasites等机构。
+
+\hypertarget{ux7814ux7a76ux6295ux8d44}{%
+\subsubsection{研究投资}\label{ux7814ux7a76ux6295ux8d44}}
+
+研究投资是VC/PE机构的核心业务（募资也是市场化机构的核心业务），主要是对宏观、政策、市场、行业、赛道和目标企业进行长期的研究，以形成深刻的知识和认知，建立投资决策。一般投资机构都会有一定的研究框架和策略，比如主要研究某些行业或者赛道，以形成一定的研究壁垒。例如偏向消费投资的黑蚁资本，专注半导体投资的元禾璞华，以及专注于产业链投资的哈勃投资。一般而言，比较大的市场化投资机构会关注若干行业或者赛道，例如当前我在职的CPE源峰专注于医疗健康、消费与互联网、科技与工业和基础设施等行业。
+
+在研究投资中，机构会持续的关注赛道并收集该赛道的初创企业或者领头企业，在建立行业认识的基础上跟踪目标公司。所以在这个过程主要的核心工作就是两个：\textbf{收集足够的信息做研究，以及找项目}
+
+基本上，信息的收集（包括各种信息不局限于前沿论文、专家访谈、高峰论坛、宏观政策、专利申请、市场数据等等）和整理分析是重点工作。投资经理的主要工作就是写报告、做数据分析等工作。
+
+在这个阶段主要用到的系统是投资管理系统，一般包括研究知识库、项目库、报告文档、投资管理（研究、项目流程），以及一些资源管理功能。
+
+不同的机构在研究框架和投资流程有不同的流程，所以这个系统定制化的需求特别高。
+
+需要注意一些行业的专业术语，例如TermSheet（出资意向书）、投前估值、投后估值、拖售权（领售权）、回购协议、优先认购权、优先分红权、回购权、跟售权、反稀释权、优先购买权、优先清算权、最优惠待遇、实控人/控股股东转让限制、实控人/控股股东的全职义务和不竞争承诺等等，甚至现在创始人的婚姻状况都备受投资人关注。
+
+投资机构一般会设置投委会，行研或者项目会通过投资委员进行讨论，一般都会经过多次讨论才会完成最终的决策。一般的流程就是立项、投决、交割、投后等
+
+\hypertarget{ux6295ux8d44ux7ba1ux7406}{%
+\subsubsection{投资管理}\label{ux6295ux8d44ux7ba1ux7406}}
+
+投资管理一般是指面向有限合伙人和被投企业的管理，以及其它日常管理。
+
+面向投资人（有限合伙人），主要是做日常沟通，以及约定中需要有限合伙人参与讨论及决策的项目投资活动，部分有限合伙人跟投，基金运营投资情况的披露等。
+
+面向被投企业管理，主要是按期收集被投企业的经营业绩数据，以及参与被投企业的日常经营决策，如果是控股投资还需要对被投企业进行管理工作。
+
+在这个过程中，一般IR和财务工作比较多，IR主要负责是和有限合伙人的沟通（信息披露、跟投推荐等等），财务主要负责编写基金报告，其中主要的内容是收集项目信息，对项目和基金进行估值以编制报告。
+
+财务在日常管理工作中也包括对基金费用进行认定和财务处理，以及计提基金管理费，和向投资人分配基金的收益。
+
+\hypertarget{ux9000ux51fa}{%
+\subsubsection{退出}\label{ux9000ux51fa}}
+
+主要是完成项目退出，以及所有项目退出后向投资人分配基金的收益，最终清算基金。
+
+\hypertarget{ux4e1aux52a1ux7cfbux7edf}{%
+\subsection{业务系统}\label{ux4e1aux52a1ux7cfbux7edf}}
+
+以CPE源峰为例，主要的系统包括CRM、专家系统、投资管理系统、基金管理系统、基金报告系统、基金财务管理系统以及对应的报表系统等。
+
+一般部分系统会外购，另外也会采购一些数据源，例如万得、鲸准等。
+
+基本上VC机构中我从业过的IDG也差不多类似，但处于合规管理等诉求，双币基金一般会分开人民币和美元团队，他们的系统数据会有落地要求，比如美元基金一般会要求数据不能落在大陆境内。
+
+另外也会有面向投资人的系统，例如上文中提到的VDR，以及部分机构会自建投资人门户。
+
+\hypertarget{ux5173ux952eux6307ux6807}{%
+\subsection{关键指标}\label{ux5173ux952eux6307ux6807}}
+
+VC/PE基金有相关的业绩指标，主要包括MOC、IRR、DPI、TVPI等等。
+
+\hypertarget{ux5185ux90e8ux6536ux76caux7387}{%
+\subsubsection{内部收益率}\label{ux5185ux90e8ux6536ux76caux7387}}
+
+IRR即内部收益率，一般指在一定时期内，一系列投资现金流和净现值为零的收益率，一般现金流包括私募基金出资投资项目、以及项目退出后的投资收益等。IRR考虑了投资资金的时间价值，以及在VC/PE基金存续期内不规则的现金流，一般能够比较合理的反映基金投资收益，是一个常用的收益率指标。但因为在整个基金期间对IRR的计算都是估算（只有在完成所有退出分配后才会计算出真实的IRR），特别是在期间对未来现金流都是基于一定方法进行估计，所以IRR也会存在噪声，并不能完全客观真实的反映基金的实际业绩，现在越来越多的投资人只是把这个指标作为比较参考。
+
+\hypertarget{ux500dux6570ux6307ux6807}{%
+\subsubsection{倍数指标}\label{ux500dux6570ux6307ux6807}}
+
+主要是通过倍数方式反映基金的业绩，包括TVPI、RVPI、DPI、MOC等等。
+
+\textbf{DPI}：分配倍数，或现金回报倍数。一般是用总分配金额/实缴金额（Distribution/Paid-in-Capital)。是用LP获得的总分配金额（分红和退出收益）与LP实缴金额的比率，目前也是LP投资人最关注的指标，毕竟这是反映真金白银赚回来的钱。目前LP投资人尽调GP时，都会考察机构的过往基金的DPI数据。因为其它指标更多的反映账面价值的回报，而DPI是考虑了真实收回的投资资金。当DPI=1时表示LP投资人完全收回实缴的投资成本，后续的分配均是投资创造的收益。
+
+\textbf{TVPI}：表示为Total Value/Paid-in-Capital，其中Total
+Value是基金投资总的价值，包括了已分配给LP投资人的部分，以及当前基金持有的资产价值（未实现的价值+留存价值）。一般而言，在基金管理过过程中，项目是逐步退出所以在基金续存期内需要对基金持有的资产进行估值，这部分就是持有但未实现（即是尚未退出收回投资资金），这部分是账面估计数据，因此持有未变现资产的价值会受到二级市场、以及后续融资估值等影响。
+
+\textbf{RVPI}：剩余价值倍数，即上述中基金持有待退出资产价值和实缴资本的倍数。一般RVPI=TVPI-DPI。
+
+\textbf{MOC}：资本回报倍数
+
+一般MOC、IRR都会有Gross和Net值，其中Net值是剔除了机构收取的基金管理费和绩效费（Carry)，所以反映基金整体的指标一般会用Gross值，而给LP提供的一般会是Net值。
+
+
+
+\end{document}
