@@ -1,1 +1,18 @@
-*** 这是用R分析数据的内容
+# 关于内容
+这是日常工作中编写的一些R脚本工具，主要是完成以下工作
+- 用来验证系统数据和导入的原始表格之间数据的一致性，可以较短的时间内完成通过脚本工具批量导入系统的数据和原始数据之间是否一致，减少现在需要人工在页面查看导入结果的工作
+- 用来验证数据计算逻辑是否准确，一般通过系统计算后的数据在页面展示，可以通过R根据约定的计算方式计算出结果和页面数据对比以验证程序的计算逻辑是否正确实现
+- 另外一些可以用来作为系统产品DEMO的工具，可以快速实现一些主要是数据输入、数据计算、数据展示业务逻辑的工具
+- 从原始表格读取数据、对数据进行导入、基本分析、清洗、整理、计算、以及最终形成面板数据后，方便能够系统快速导入，减少导入脚本编写的复杂性和提高导入结果准确度
+- 其他一些有用的功能
+
+
+# README
+
+This is repo of my R scripts in my daily work. It used to gather data from database and excel file.
+
+Also I create some scripts to test the data between excel files and system which uploaded by devlopers from excel files. 
+This is a useful test method the check the data accuracy.
+
+And some test cases to check the program logical. I create the sql to fetch the data from database and then use caculation
+to caculate the result, to compare with system display. 
