@@ -4,11 +4,7 @@ from sqlalchemy import create_engine
 import re
 
 # 假设 expert_dbconn.R 中定义了如下内容：
-host = "10.11.5.31"
-dbname = "expert"
-user = "expert_prod"
-password = "exp&123cpe"
-port = 3306
+
 # 使用 SQLAlchemy 创建数据库引擎
 engine = create_engine('postgresql+psycopg2://user:password@host:port/dbname')
 
